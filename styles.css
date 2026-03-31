@@ -129,20 +129,29 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 46px;
+  width: 46px;
+  height: 46px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--surface-strong);
   color: var(--muted);
-  padding: 10px 12px;
-  font: 700 1rem "Space Grotesk", sans-serif;
-  line-height: 1;
+  padding: 0;
   cursor: pointer;
   transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
 }
 
 .theme-toggle:hover {
   transform: translateY(-1px);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 main {
