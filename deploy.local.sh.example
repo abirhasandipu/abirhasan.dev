@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -eu
+
+DEPLOY_URL="YOUR_XCLOUD_DEPLOY_URL"
+
+if [ "$DEPLOY_URL" = "YOUR_XCLOUD_DEPLOY_URL" ]; then
+  echo "Set your xCloud deploy URL in deploy.local.sh before running this script."
+  exit 1
+fi
+
+echo "Triggering xCloud deployment..."
+curl --fail --silent --show-error --request POST "$DEPLOY_URL"
+echo
+echo "xCloud deploy request sent."
