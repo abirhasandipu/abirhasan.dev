@@ -10,6 +10,13 @@
     />
     <script>
       document.documentElement.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("theme-preference");
+        const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -95,6 +102,43 @@
               <p>
                 My background in design and development helps me bridge user
                 expectations with technical implementation realities.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="focus-detail reveal">
+          <div class="section-heading">
+            <p class="eyebrow">About xCloud</p>
+            <h2>The platform behind my current support work</h2>
+          </div>
+          <div class="cards focus-detail-grid">
+            <article class="info-card">
+              <p class="card-index">01</p>
+              <h3>Managed hosting and server control</h3>
+              <p>
+                <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a> is a managed hosting and server management platform built
+                for WordPress, Laravel, PHP applications, Node.js projects, and
+                Docker-based workloads from one dashboard.
+              </p>
+            </article>
+            <article class="info-card">
+              <p class="card-index">02</p>
+              <h3>Built for speed and operations</h3>
+              <p>
+                The platform focuses on practical deployment and operations
+                workflows, including one-click app launches, backups, SSL,
+                monitoring, team access, and support for multiple cloud
+                providers.
+              </p>
+            </article>
+            <article class="info-card">
+              <p class="card-index">03</p>
+              <h3>Why it matters in my role</h3>
+              <p>
+                Working with <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a> means supporting customers across hosting,
+                migrations, troubleshooting, usability, and product quality in
+                a platform designed to simplify modern cloud workflows.
               </p>
             </article>
           </div>

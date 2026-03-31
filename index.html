@@ -10,6 +10,13 @@
     />
     <script>
       document.documentElement.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("theme-preference");
+        const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +48,7 @@
               with practical hands-on insight.
             </h1>
             <p class="hero-text">
-              Technical Support Engineer with experience across managed hosting
+              Senior Technical Support Engineer with experience across managed hosting
               support, WordPress troubleshooting, software development, software
               testing, and graphic design.
             </p>
@@ -55,9 +62,9 @@
             <p class="card-label">Current snapshot</p>
             <ul class="snapshot-list">
               <li><span>Name</span><strong>Abir</strong></li>
-              <li><span>Role</span><strong>Technical Support Engineer</strong></li>
+              <li><span>Role</span><strong>Senior Technical Support Engineer</strong></li>
               <li><span>Based in</span><strong>Bangladesh</strong></li>
-              <li><span>Company</span><strong>xCloud</strong></li>
+              <li><span>Company</span><strong><a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a></strong></li>
               <li><span>Career Focus</span><strong>Managed hosting, WordPress, product quality</strong></li>
             </ul>
           </aside>
@@ -70,7 +77,7 @@
           </div>
           <div class="about-grid">
             <p>
-              I am Abir, a Technical Support Engineer with
+              I am Abir, a Senior Technical Support Engineer with
               hands-on experience in managed hosting support, graphic design,
               software development, and software testing. I began my
               professional career as a Graphic Designer from 2013 to 2015,
@@ -80,7 +87,7 @@
             <p>
               In 2020, I worked as a Junior Software Developer Intern at
               SoftifyBD, where I expanded my technical skills. Since 2022, I
-              have been working at WPDeveloper on xCloud, helping users with
+              have been working at WPDeveloper on <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a>, helping users with
               WordPress and server issues, migrations, feature testing,
               usability improvements, and documentation.
             </p>
