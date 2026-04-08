@@ -602,7 +602,7 @@ h3 {
 
 .work-card-media {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
   border-bottom: 1px solid var(--line);
@@ -699,6 +699,10 @@ h3 {
   h1 {
     max-width: 12ch;
   }
+
+  .work-card-media {
+    aspect-ratio: 5 / 4;
+  }
 }
 
 @media (max-width: 680px) {
@@ -733,6 +737,19 @@ h3 {
 
   .site-header.is-compact .nav-toggle {
     display: inline-flex;
+  }
+
+  .work-grid {
+    gap: 16px;
+  }
+
+  .work-card-body {
+    padding: 18px;
+  }
+
+  .work-card h2 {
+    font-size: 1.35rem;
+    line-height: 1.08;
   }
 }
 
