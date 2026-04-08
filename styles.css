@@ -593,6 +593,7 @@ h3 {
 }
 
 .work-card {
+  display: grid;
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   background: var(--surface-strong);
@@ -611,11 +612,14 @@ h3 {
   display: grid;
   gap: 14px;
   padding: 22px;
+  align-content: start;
 }
 
 .work-card h2 {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  line-height: 1.02;
+  max-width: none;
+  font-size: 1.55rem;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
 }
 
 .work-card p {
@@ -625,7 +629,7 @@ h3 {
 }
 
 .work-card-actions {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .post-page {
