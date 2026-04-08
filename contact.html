@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abir | Contact</title>
+    <meta
+      name="description"
+      content="Contact Abir Hasan for technical support, collaboration, and professional opportunities."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("theme-preference");
+        const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html">abirhasan.dev</a>
+        <nav class="nav">
+          <a href="./index.html">Home</a>
+          <a href="./my-work.html">My Work</a>
+          <a href="./about.html">About</a>
+          <a href="./focus.html">Career Focus</a>
+          <a href="./interests.html">Interests</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="contact-hero reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h1>Open to meaningful conversations, collaboration, and opportunities.</h1>
+          </div>
+          <p class="hero-text">
+            If you would like to connect about support engineering, hosting,
+            product quality, documentation, or broader technical work, I would
+            be happy to hear from you.
+          </p>
+        </section>
+
+        <section class="contact-detail reveal">
+          <div class="contact-grid">
+            <div class="contact-panel contact-panel-strong">
+              <p class="card-label">Reach Out</p>
+              <h2>Best ways to connect</h2>
+              <p>
+                I usually respond fastest through email, and I am also available
+                on professional platforms for networking and work discussions.
+              </p>
+              <div class="contact-links contact-links-stack">
+                <a href="mailto:mdabirhasandipu@gmail.com">mdabirhasandipu@gmail.com</a>
+                <a href="https://github.com/abirhasandipu" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/md-abir-hasan-dipu-575b851b4/" target="_blank" rel="noreferrer">LinkedIn</a>
+              </div>
+            </div>
+
+            <div class="contact-panel">
+              <p class="card-label">What I Can Help With</p>
+              <div class="cards contact-topic-grid">
+                <article class="info-card">
+                  <p class="card-index">01</p>
+                  <h3>Support and troubleshooting</h3>
+                  <p>
+                    Hosting issues, WordPress support, migrations, and practical
+                    problem-solving for platform workflows.
+                  </p>
+                </article>
+                <article class="info-card">
+                  <p class="card-index">02</p>
+                  <h3>Testing and product quality</h3>
+                  <p>
+                    Feature verification, QA-minded review, and usability
+                    feedback to improve customer experience.
+                  </p>
+                </article>
+                <article class="info-card">
+                  <p class="card-index">03</p>
+                  <h3>Professional opportunities</h3>
+                  <p>
+                    Roles, collaborations, and conversations connected to
+                    support engineering, product operations, and technical work.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="quote-strip reveal">
+          <p>
+            “The best technical support builds confidence, not just solutions.”
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

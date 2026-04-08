@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abir | About</title>
+    <meta
+      name="description"
+      content="Biography, career path, and working approach of Abir Hasan."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("theme-preference");
+        const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html">abirhasan.dev</a>
+        <nav class="nav">
+          <a href="./index.html">Home</a>
+          <a href="./my-work.html">My Work</a>
+          <a href="./about.html">About</a>
+          <a href="./focus.html">Career Focus</a>
+          <a href="./interests.html">Interests</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="about-hero reveal">
+          <div class="about-hero-copy">
+            <div class="section-heading">
+              <p class="eyebrow">About</p>
+              <h1>The story behind Abir's path into support, quality, and product thinking.</h1>
+            </div>
+            <p class="hero-text">
+              I am Abir Hasan, a Senior Technical Support Engineer whose career
+              has moved through design, development, testing, and platform
+              support. That cross-disciplinary journey shapes how I solve
+              problems today: clearly, practically, and with the end user in
+              mind.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="./contact.html">Get in touch</a>
+              <a class="button secondary" href="./focus.html">See career focus</a>
+            </div>
+          </div>
+          <div class="about-portrait-card">
+            <img
+              class="about-portrait"
+              src="./assets/about/abir-profile.svg"
+              alt="Illustrated profile card for Abir Hasan"
+            />
+          </div>
+        </section>
+
+        <section class="bio-story reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Biography</p>
+            <h2>A career built step by step across multiple disciplines.</h2>
+          </div>
+          <div class="about-grid">
+            <p>
+              I started my professional career as a Graphic Designer from 2013
+              to 2015. That experience gave me a strong foundation in visual
+              communication, presentation, and thinking about how people engage
+              with digital work.
+            </p>
+            <p>
+              In 2020, I worked as a Junior Software Developer Intern at
+              SoftifyBD. That role helped me grow my technical understanding and
+              gave me a stronger view of how software is built behind the scenes.
+            </p>
+            <p>
+              Since 2022, I have been working at WPDeveloper on
+              <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a>,
+              helping customers with WordPress and server issues, migrations,
+              bug verification, documentation, and product usability.
+            </p>
+            <p>
+              Today, I bring together support operations, product quality, clear
+              communication, and a practical engineering mindset. I enjoy work
+              that improves trust, removes friction, and makes technology easier
+              to use.
+            </p>
+          </div>
+        </section>
+
+        <section class="timeline-section reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Timeline</p>
+            <h2>Key moments in my professional journey.</h2>
+          </div>
+          <div class="timeline-list">
+            <article class="timeline-item">
+              <p class="card-index">2013-2015</p>
+              <h3>Graphic Design</h3>
+              <p>
+                Built strong fundamentals in visual communication, presentation,
+                and user-centered thinking.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <p class="card-index">2020</p>
+              <h3>Software Development Internship</h3>
+              <p>
+                Expanded my technical skills at SoftifyBD and gained hands-on
+                software development experience.
+              </p>
+            </article>
+            <article class="timeline-item">
+              <p class="card-index">2022-Present</p>
+              <h3>Senior Technical Support Engineering</h3>
+              <p>
+                Supporting hosting, migrations, troubleshooting, testing, and
+                product quality work at WPDeveloper on xCloud.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="focus-detail reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Working Style</p>
+            <h2>How I approach technical support and collaboration.</h2>
+          </div>
+          <div class="cards focus-detail-grid">
+            <article class="info-card">
+              <p class="card-index">01</p>
+              <h3>Clear communication</h3>
+              <p>
+                I like explaining technical issues in a way that feels calm,
+                understandable, and useful for the person receiving support.
+              </p>
+            </article>
+            <article class="info-card">
+              <p class="card-index">02</p>
+              <h3>Practical problem solving</h3>
+              <p>
+                I focus on solutions that are reliable in real-world hosting and
+                product environments, not just technically correct on paper.
+              </p>
+            </article>
+            <article class="info-card">
+              <p class="card-index">03</p>
+              <h3>Cross-functional awareness</h3>
+              <p>
+                My background in design, development, and testing helps me work
+                across customer needs, technical detail, and product quality.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

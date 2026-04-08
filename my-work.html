@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abir | My Work</title>
+    <meta
+      name="description"
+      content="Selected apps and product work by Abir Hasan, including Dhaka MRT Time, GoldPriceBD, and MessMate."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("theme-preference");
+        const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html">abirhasan.dev</a>
+        <nav class="nav">
+          <a href="./index.html">Home</a>
+          <a href="./my-work.html">My Work</a>
+          <a href="./about.html">About</a>
+          <a href="./focus.html">Career Focus</a>
+          <a href="./interests.html">Interests</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="subpage-hero reveal">
+          <div class="section-heading">
+            <p class="eyebrow">My Work</p>
+            <h1>Apps and ideas I have built, shaped, or continue to grow.</h1>
+          </div>
+          <p class="hero-text">
+            A selection of practical products focused on everyday utility,
+            better access to information, and smoother digital experiences.
+          </p>
+        </section>
+
+        <section class="work-showcase reveal">
+          <div class="work-grid">
+            <article class="work-card">
+              <img
+                class="work-card-media"
+                src="./assets/work/dhaka-mrt-time.svg"
+                alt="Dhaka MRT Time app thumbnail"
+              />
+              <div class="work-card-body">
+                <div class="blog-tags" aria-label="Categories">
+                  <span class="blog-tag">Transit</span>
+                  <span class="blog-tag">Utility</span>
+                  <span class="blog-tag">Web App</span>
+                </div>
+                <h2>DhakaMRTTime.com</h2>
+                <p>
+                  A practical app focused on helping people check Dhaka MRT
+                  timing information quickly and with less friction.
+                </p>
+                <div class="work-card-actions">
+                  <a class="button secondary" href="https://dhakamrttime.com" target="_blank" rel="noreferrer">Visit App</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <img
+                class="work-card-media"
+                src="./assets/work/gold-price-bd.svg"
+                alt="GoldPriceBD app thumbnail"
+              />
+              <div class="work-card-body">
+                <div class="blog-tags" aria-label="Categories">
+                  <span class="blog-tag">Finance</span>
+                  <span class="blog-tag">Market Data</span>
+                  <span class="blog-tag">Bangladesh</span>
+                </div>
+                <h2>GoldPriceBD</h2>
+                <p>
+                  A focused product concept for tracking and presenting gold
+                  price information in a way that is easier to understand and
+                  useful in day-to-day decision making.
+                </p>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <img
+                class="work-card-media"
+                src="./assets/work/messmate.svg"
+                alt="MessMate app thumbnail"
+              />
+              <div class="work-card-body">
+                <div class="blog-tags" aria-label="Categories">
+                  <span class="blog-tag">Management</span>
+                  <span class="blog-tag">Productivity</span>
+                  <span class="blog-tag">Operations</span>
+                </div>
+                <h2>MessMate</h2>
+                <p>
+                  An app idea centered on making shared living or mess
+                  management simpler, more organized, and easier to handle for
+                  everyday users.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
