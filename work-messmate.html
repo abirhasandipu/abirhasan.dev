@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abir | MessMate</title>
+    <meta
+      name="description"
+      content="Project page for MessMate, a concept for simplifying shared-living management."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        const savedTheme = localStorage.getItem("theme-preference");
+        const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html">abirhasan.dev</a>
+        <nav class="nav">
+          <a href="./index.html">Home</a>
+          <a href="./my-work.html">My Work</a>
+          <a href="./about.html">About</a>
+          <a href="./focus.html">Career Focus</a>
+          <a href="./interests.html">Interests</a>
+          <a href="./blog.html">Blog</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="project-detail-hero reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Project Detail</p>
+            <h1>MessMate</h1>
+          </div>
+          <p class="hero-text">
+            A management-focused app concept for making shared-living tasks,
+            responsibilities, and day-to-day coordination simpler and more
+            organized.
+          </p>
+          <div class="blog-tags" aria-label="Tech stack">
+            <span class="blog-tag">Operations</span>
+            <span class="blog-tag">Product Design</span>
+            <span class="blog-tag">Mobile-first</span>
+            <span class="blog-tag">UX</span>
+          </div>
+          <div class="project-actions">
+            <a class="button primary" href="#">Live Site</a>
+            <a class="button secondary" href="./my-work.html">Back to My Work</a>
+            <a class="button secondary" href="#">GitHub</a>
+          </div>
+        </section>
+
+        <section class="project-detail-section reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Preview</p>
+            <h2>Concept layouts for shared-living management workflows.</h2>
+          </div>
+          <div class="project-media project-media-split">
+            <img
+              class="project-real-media"
+              src="./assets/work/messmate.svg"
+              alt="MessMate placeholder concept screen"
+            />
+            <div class="project-shot-grid">
+              <div class="placeholder-frame placeholder-shot">
+                <span class="placeholder-label">Task View</span>
+              </div>
+              <div class="placeholder-frame placeholder-shot">
+                <span class="placeholder-label">Expense View</span>
+              </div>
+              <div class="placeholder-frame placeholder-shot">
+                <span class="placeholder-label">Member View</span>
+              </div>
+              <div class="placeholder-frame placeholder-shot">
+                <span class="placeholder-label">Activity View</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-detail-section reveal">
+          <div class="project-copy">
+            <p>
+              MessMate is a product idea that focuses on reducing daily friction
+              in shared spaces by making responsibilities, tracking, and
+              coordination easier to manage.
+            </p>
+            <p>
+              This page is ready to be expanded later with real screenshots,
+              feature breakdowns, and a stronger case-study narrative as the
+              concept evolves.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
