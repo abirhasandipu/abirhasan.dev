@@ -1,23 +1,244 @@
 const storageKey = "theme-preference";
+const languageStorageKey = "language-preference";
 const root = document.documentElement;
 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const mobileNavQuery = window.matchMedia("(max-width: 680px)");
-const sunIcon = `
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <circle cx="12" cy="12" r="4.5"></circle>
-    <path d="M12 2.5v2.5M12 19v2.5M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2.5 12H5M19 12h2.5M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"></path>
-  </svg>
-`;
-const moonIcon = `
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M18.2 15.4A7.9 7.9 0 0 1 8.6 5.8a8.5 8.5 0 1 0 9.6 9.6Z"></path>
-  </svg>
-`;
+const fontAwesomeHref =
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css";
 const menuIcon = `
   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M4 7h16M4 12h16M4 17h16"></path>
   </svg>
 `;
+
+const ensureFontAwesome = () => {
+  if (document.querySelector('link[data-fontawesome="true"]')) {
+    return;
+  }
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = fontAwesomeHref;
+  link.crossOrigin = "anonymous";
+  link.referrerPolicy = "no-referrer";
+  link.dataset.fontawesome = "true";
+  document.head.append(link);
+};
+
+const getSemanticText = (element) =>
+  (element?.dataset?.i18nEn || element?.textContent || "").trim().replace(/\s+/g, " ");
+
+const iconMarkup = (classes) =>
+  `<span class="fa-inline-icon" aria-hidden="true"><i class="${classes}"></i></span>`;
+
+const applyIconLabel = (element, classes) => {
+  if (!element || !classes) {
+    return;
+  }
+
+  const label = element.textContent.trim();
+  if (!label) {
+    return;
+  }
+
+  element.classList.add("with-icon");
+  element.innerHTML = `${iconMarkup(classes)}<span class="label-text">${label}</span>`;
+};
+
+const decorateNav = () => {
+  const navIcons = {
+    "index.html": "fa-solid fa-house",
+    "my-work.html": "fa-solid fa-briefcase",
+    "about.html": "fa-solid fa-user",
+    "focus.html": "fa-solid fa-compass-drafting",
+    "interests.html": "fa-solid fa-heart",
+    "blog.html": "fa-solid fa-pen-nib",
+    "contact.html": "fa-solid fa-envelope",
+  };
+
+  document.querySelectorAll(".nav a").forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    const key = Object.keys(navIcons).find((item) => href.endsWith(item));
+    applyIconLabel(link, key ? navIcons[key] : "fa-solid fa-link");
+  });
+};
+
+const decorateButtons = () => {
+  const buttonIcons = {
+    "Work with me": "fa-solid fa-handshake",
+    "View projects": "fa-solid fa-table-cells-large",
+    "Open career focus page": "fa-solid fa-compass-drafting",
+    "Get in touch": "fa-solid fa-paper-plane",
+    "See career focus": "fa-solid fa-compass-drafting",
+    "Live Site": "fa-solid fa-arrow-up-right-from-square",
+    "Case Study": "fa-regular fa-file-lines",
+    GitHub: "fa-brands fa-github",
+    English: "fa-solid fa-language",
+    "বাংলা": "fa-solid fa-language",
+  };
+
+  document.querySelectorAll(".button, .lang-toggle").forEach((button) => {
+    const label = getSemanticText(button);
+    applyIconLabel(button, buttonIcons[label] || null);
+  });
+};
+
+const decorateContactLinks = () => {
+  document.querySelectorAll(".contact-links a").forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    let icon = "fa-solid fa-link";
+
+    if (href.startsWith("mailto:")) {
+      icon = "fa-solid fa-envelope";
+    } else if (href.includes("github.com")) {
+      icon = "fa-brands fa-github";
+    } else if (href.includes("linkedin.com")) {
+      icon = "fa-brands fa-linkedin";
+    }
+
+    applyIconLabel(link, icon);
+  });
+};
+
+const decorateLabels = () => {
+  const labelIcons = {
+    Portfolio: "fa-solid fa-sparkles",
+    About: "fa-solid fa-user",
+    Biography: "fa-solid fa-book-open",
+    Timeline: "fa-solid fa-timeline",
+    "Working Style": "fa-solid fa-people-arrows-left-right",
+    "Career Focus": "fa-solid fa-compass-drafting",
+    "About xCloud": "fa-solid fa-cloud",
+    Contact: "fa-solid fa-envelope-open-text",
+    "Current snapshot": "fa-solid fa-chart-column",
+    "Reach Out": "fa-solid fa-address-book",
+    "What I Can Help With": "fa-solid fa-toolbox",
+    "Project 01": "fa-solid fa-train-subway",
+    "Project 02": "fa-solid fa-coins",
+    "Project 03": "fa-solid fa-house-user",
+    "Blog Post 01": "fa-solid fa-file-signature",
+    "Blog Post 02": "fa-solid fa-file-signature",
+    "Blog Post 03": "fa-solid fa-file-signature",
+    "Blog Post 04": "fa-solid fa-file-signature",
+    "Blog Post 05": "fa-solid fa-file-signature",
+  };
+
+  document.querySelectorAll(".eyebrow, .card-label, .post-meta").forEach((element) => {
+    const label = getSemanticText(element);
+    applyIconLabel(element, labelIcons[label] || null);
+  });
+};
+
+const decorateCardHeadings = () => {
+  const headingIcons = {
+    "Managed hosting support": "fa-solid fa-server",
+    "Product testing and usability": "fa-solid fa-flask",
+    "Cross-functional perspective": "fa-solid fa-diagram-project",
+    "Technical support": "fa-solid fa-life-ring",
+    "Migrations and operations": "fa-solid fa-arrows-rotate",
+    "Testing and QA": "fa-solid fa-bug",
+    "Usability improvement": "fa-solid fa-hand-pointer",
+    Documentation: "fa-solid fa-book",
+    "Cross-disciplinary thinking": "fa-solid fa-layer-group",
+    "Managed hosting and server control": "fa-solid fa-cloud-arrow-up",
+    "Built for speed and operations": "fa-solid fa-gauge-high",
+    "Why it matters in my role": "fa-solid fa-circle-info",
+    "Graphic Design": "fa-solid fa-pen-ruler",
+    "Software Development Internship": "fa-solid fa-code",
+    "Senior Technical Support Engineering": "fa-solid fa-headset",
+    "Clear communication": "fa-solid fa-comments",
+    "Practical problem solving": "fa-solid fa-screwdriver-wrench",
+    "Cross-functional awareness": "fa-solid fa-arrows-to-circle",
+    "Support and troubleshooting": "fa-solid fa-screwdriver-wrench",
+    "Testing and product quality": "fa-solid fa-shield-halved",
+    "Professional opportunities": "fa-solid fa-briefcase",
+    "Best ways to connect": "fa-solid fa-address-card",
+    "DhakaMRTTime.com": "fa-solid fa-train-subway",
+    GoldPriceBD: "fa-solid fa-coins",
+    MessMate: "fa-solid fa-house-user",
+  };
+
+  document
+    .querySelectorAll(".info-card h3, .timeline-item h3, .project-header h2, .contact-panel h2")
+    .forEach((heading) => {
+      const label = getSemanticText(heading);
+      applyIconLabel(heading, headingIcons[label] || null);
+    });
+};
+
+const decorateInterface = () => {
+  ensureFontAwesome();
+  decorateNav();
+  decorateButtons();
+  decorateContactLinks();
+  decorateLabels();
+  decorateCardHeadings();
+};
+
+const getStoredLanguage = () => {
+  try {
+    return localStorage.getItem(languageStorageKey);
+  } catch {
+    return null;
+  }
+};
+
+const setStoredLanguage = (language) => {
+  try {
+    localStorage.setItem(languageStorageKey, language);
+  } catch {
+    return;
+  }
+};
+
+const getPreferredLanguage = () => {
+  const storedLanguage = getStoredLanguage();
+  if (storedLanguage === "en" || storedLanguage === "bn") {
+    return storedLanguage;
+  }
+
+  return root.lang === "bn" ? "bn" : "en";
+};
+
+const applyLanguage = (language) => {
+  const nextLanguage = language === "bn" ? "bn" : "en";
+  root.lang = nextLanguage;
+  root.dataset.language = nextLanguage;
+
+  document.querySelectorAll("[data-i18n-en]").forEach((element) => {
+    element.textContent = element.dataset[`i18n${nextLanguage === "bn" ? "Bn" : "En"}`];
+  });
+
+  document.querySelectorAll("[data-i18n-html-en]").forEach((element) => {
+    element.innerHTML = element.dataset[`i18nHtml${nextLanguage === "bn" ? "Bn" : "En"}`];
+  });
+
+  document.querySelectorAll("[data-i18n-content-en]").forEach((element) => {
+    element.setAttribute(
+      "content",
+      element.dataset[`i18nContent${nextLanguage === "bn" ? "Bn" : "En"}`]
+    );
+  });
+};
+
+const pageHasTranslations = () =>
+  document.querySelector("[data-i18n-en], [data-i18n-html-en], [data-i18n-content-en]") !== null;
+
+const getHeaderControls = () => {
+  const header = document.querySelector(".site-header");
+  if (!header) {
+    return null;
+  }
+
+  let controls = header.querySelector(".header-controls");
+  if (!controls) {
+    controls = document.createElement("div");
+    controls.className = "header-controls";
+    header.append(controls);
+  }
+
+  return controls;
+};
 
 const getStoredTheme = () => {
   try {
@@ -48,41 +269,53 @@ const setStoredTheme = (theme) => {
   }
 };
 
-const renderThemeToggle = () => {
-  const header = document.querySelector(".site-header");
-  if (!header) {
+const renderLanguageToggle = () => {
+  if (!pageHasTranslations()) {
+    return null;
+  }
+
+  const controls = getHeaderControls();
+  if (!controls) {
     return null;
   }
 
   const button = document.createElement("button");
-  button.className = "theme-toggle";
+  button.className = "lang-toggle";
   button.type = "button";
   button.setAttribute("aria-live", "polite");
 
   const syncLabel = () => {
-    const theme = root.dataset.theme === "dark" ? "dark" : "light";
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    button.innerHTML = theme === "dark" ? moonIcon : sunIcon;
-    button.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
-    button.setAttribute("title", `Switch to ${nextTheme} mode`);
+    const language = root.lang === "bn" ? "bn" : "en";
+    const nextLanguage = language === "bn" ? "en" : "bn";
+    button.textContent = language === "bn" ? "English" : "বাংলা";
+    button.setAttribute(
+      "aria-label",
+      nextLanguage === "bn" ? "Switch language to Bangla" : "Switch language to English"
+    );
+    button.setAttribute(
+      "title",
+      nextLanguage === "bn" ? "Switch language to Bangla" : "Switch language to English"
+    );
   };
 
   button.addEventListener("click", () => {
-    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-    applyTheme(nextTheme);
-    setStoredTheme(nextTheme);
+    const nextLanguage = root.lang === "bn" ? "en" : "bn";
+    applyLanguage(nextLanguage);
+    setStoredLanguage(nextLanguage);
     syncLabel();
+    decorateInterface();
   });
 
-  header.append(button);
+  controls.append(button);
   syncLabel();
   return button;
 };
 
 const renderNavToggle = () => {
   const header = document.querySelector(".site-header");
+  const controls = getHeaderControls();
   const nav = document.querySelector(".nav");
-  if (!header || !nav) {
+  if (!header || !nav || !controls) {
     return null;
   }
 
@@ -115,7 +348,7 @@ const renderNavToggle = () => {
     });
   });
 
-  header.append(button);
+  controls.append(button);
   syncMenuState();
   return button;
 };
@@ -140,9 +373,11 @@ const syncMobileNav = () => {
 };
 
 applyTheme(getPreferredTheme());
-renderThemeToggle();
+applyLanguage(getPreferredLanguage());
+renderLanguageToggle();
 renderNavToggle();
 syncMobileNav();
+decorateInterface();
 
 mediaQuery.addEventListener("change", (event) => {
   if (getStoredTheme()) {
@@ -150,8 +385,6 @@ mediaQuery.addEventListener("change", (event) => {
   }
 
   applyTheme(event.matches ? "dark" : "light");
-  document.querySelector(".theme-toggle")?.remove();
-  renderThemeToggle();
 });
 
 mobileNavQuery.addEventListener("change", () => {
