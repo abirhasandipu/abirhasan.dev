@@ -3,25 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n-en="Abir | Career Focus" data-i18n-bn="আবির | ক্যারিয়ার ফোকাস">Abir | Career Focus</title>
+    <title>Abir | Career Focus</title>
     <meta
       name="description"
       content="Career focus areas and work strengths for Abir."
-      data-i18n-content-en="Career focus areas and work strengths for Abir."
-      data-i18n-content-bn="আবিরের ক্যারিয়ার ফোকাস এবং কাজের শক্তির ক্ষেত্রসমূহ।"
     />
     <script>
       document.documentElement.classList.add("js");
       try {
         const savedTheme = localStorage.getItem("theme-preference");
-        const savedLanguage = localStorage.getItem("language-preference");
         const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        const language = savedLanguage === "bn" ? "bn" : "en";
         document.documentElement.dataset.theme = theme;
-        document.documentElement.lang = language;
       } catch {
         document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        document.documentElement.lang = "en";
       }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,23 +31,22 @@
       <header class="site-header">
         <a class="brand" href="./index.html">abirhasan.dev</a>
         <nav class="nav">
-          <a href="./index.html" data-i18n-en="Home" data-i18n-bn="হোম">Home</a>
-          <a href="./my-work.html" data-i18n-en="My Work" data-i18n-bn="আমার কাজ">My Work</a>
-          <a href="./about.html" data-i18n-en="About" data-i18n-bn="আমার সম্পর্কে">About</a>
-          <a href="./focus.html" data-i18n-en="Career Focus" data-i18n-bn="ক্যারিয়ার ফোকাস">Career Focus</a>
-          <a href="./interests.html" data-i18n-en="Interests" data-i18n-bn="আগ্রহ">Interests</a>
-          <a href="./blog.html" data-i18n-en="Blog" data-i18n-bn="ব্লগ">Blog</a>
-          <a href="./contact.html" data-i18n-en="Contact" data-i18n-bn="যোগাযোগ">Contact</a>
+          <a href="./index.html">Home</a>
+          <a href="./my-work.html">My Work</a>
+          <a href="./about.html">About</a>
+          <a href="./focus.html">Career Focus</a>
+          <a href="./interests.html">Interests</a>
+          <a href="./contact.html">Contact</a>
         </nav>
       </header>
 
       <main>
         <section class="subpage-hero reveal">
           <div class="section-heading">
-            <p class="eyebrow" data-i18n-en="Career Focus" data-i18n-bn="ক্যারিয়ার ফোকাস">Career Focus</p>
-            <h1 data-i18n-en="How Abir works across support, quality, and product experience." data-i18n-bn="সাপোর্ট, কোয়ালিটি, এবং প্রোডাক্ট অভিজ্ঞতা জুড়ে আবির কীভাবে কাজ করে।">How Abir works across support, quality, and product experience.</h1>
+            <p class="eyebrow">Career Focus</p>
+            <h1>How Abir works across support, quality, and product experience.</h1>
           </div>
-          <p class="hero-text" data-i18n-en="My work is grounded in technical support, but it also draws from testing, usability thinking, and past experience in development and design. That mix helps me solve issues in ways that are both technically solid and user-aware." data-i18n-bn="আমার কাজের ভিত্তি টেকনিক্যাল সাপোর্ট, তবে এর সঙ্গে টেস্টিং, ব্যবহারযোগ্যতা নিয়ে চিন্তা, এবং ডেভেলপমেন্ট ও ডিজাইনের পূর্ব অভিজ্ঞতাও যুক্ত আছে। এই সমন্বয় আমাকে এমনভাবে সমস্যা সমাধান করতে সাহায্য করে যা প্রযুক্তিগতভাবে শক্ত এবং ব্যবহারকারীকেও গুরুত্ব দেয়।">
+          <p class="hero-text">
             My work is grounded in technical support, but it also draws from
             testing, usability thinking, and past experience in development and
             design. That mix helps me solve issues in ways that are both
@@ -65,48 +58,48 @@
           <div class="cards focus-detail-grid">
             <article class="info-card">
               <p class="card-index">01</p>
-              <h3 data-i18n-en="Technical support" data-i18n-bn="টেকনিক্যাল সাপোর্ট">Technical support</h3>
-              <p data-i18n-en="I help users resolve hosting, WordPress, and server-related issues with practical troubleshooting and clear communication." data-i18n-bn="আমি ব্যবহারকারীদের হোস্টিং, ওয়ার্ডপ্রেস, এবং সার্ভার-সংক্রান্ত সমস্যা বাস্তবসম্মত ট্রাবলশুটিং ও পরিষ্কার যোগাযোগের মাধ্যমে সমাধান করতে সহায়তা করি।">
+              <h3>Technical support</h3>
+              <p>
                 I help users resolve hosting, WordPress, and server-related
                 issues with practical troubleshooting and clear communication.
               </p>
             </article>
             <article class="info-card">
               <p class="card-index">02</p>
-              <h3 data-i18n-en="Migrations and operations" data-i18n-bn="মাইগ্রেশন ও অপারেশনস">Migrations and operations</h3>
-              <p data-i18n-en="I assist with site migrations and day-to-day platform support, helping keep managed hosting workflows dependable and smooth." data-i18n-bn="আমি সাইট মাইগ্রেশন এবং দৈনন্দিন প্ল্যাটফর্ম সাপোর্টে সহায়তা করি, যাতে ম্যানেজড হোস্টিং ওয়ার্কফ্লো নির্ভরযোগ্য ও মসৃণ থাকে।">
+              <h3>Migrations and operations</h3>
+              <p>
                 I assist with site migrations and day-to-day platform support,
                 helping keep managed hosting workflows dependable and smooth.
               </p>
             </article>
             <article class="info-card">
               <p class="card-index">03</p>
-              <h3 data-i18n-en="Testing and QA" data-i18n-bn="টেস্টিং ও কিউএ">Testing and QA</h3>
-              <p data-i18n-en="I test features, verify bug fixes, and look for edge cases that affect performance, trust, or usability." data-i18n-bn="আমি ফিচার টেস্ট করি, বাগ ফিক্স যাচাই করি, এবং এমন এজ কেস খুঁজি যা পারফরম্যান্স, বিশ্বাসযোগ্যতা, বা ব্যবহারযোগ্যতায় প্রভাব ফেলে।">
+              <h3>Testing and QA</h3>
+              <p>
                 I test features, verify bug fixes, and look for edge cases that
                 affect performance, trust, or usability.
               </p>
             </article>
             <article class="info-card">
               <p class="card-index">04</p>
-              <h3 data-i18n-en="Usability improvement" data-i18n-bn="ব্যবহারযোগ্যতা উন্নয়ন">Usability improvement</h3>
-              <p data-i18n-en="I contribute feedback that helps products become easier to use, more intuitive, and more reliable for real customers." data-i18n-bn="আমি এমন ফিডব্যাক দিই যা প্রোডাক্টকে ব্যবহার করা সহজ, আরও স্বাভাবিক, এবং বাস্তব গ্রাহকদের জন্য বেশি নির্ভরযোগ্য হতে সাহায্য করে।">
+              <h3>Usability improvement</h3>
+              <p>
                 I contribute feedback that helps products become easier to use,
                 more intuitive, and more reliable for real customers.
               </p>
             </article>
             <article class="info-card">
               <p class="card-index">05</p>
-              <h3 data-i18n-en="Documentation" data-i18n-bn="ডকুমেন্টেশন">Documentation</h3>
-              <p data-i18n-en="I support documentation efforts so product guidance is easier to follow and more helpful during troubleshooting." data-i18n-bn="আমি ডকুমেন্টেশনকে সহায়তা করি যাতে প্রোডাক্ট নির্দেশনা অনুসরণ করা সহজ হয় এবং ট্রাবলশুটিংয়ের সময় আরও কার্যকর হয়।">
+              <h3>Documentation</h3>
+              <p>
                 I support documentation efforts so product guidance is easier to
                 follow and more helpful during troubleshooting.
               </p>
             </article>
             <article class="info-card">
               <p class="card-index">06</p>
-              <h3 data-i18n-en="Cross-disciplinary thinking" data-i18n-bn="বহুমাত্রিক ভাবনা">Cross-disciplinary thinking</h3>
-              <p data-i18n-en="My background in design and development helps me bridge user expectations with technical implementation realities." data-i18n-bn="ডিজাইন এবং ডেভেলপমেন্টে আমার অভিজ্ঞতা আমাকে ব্যবহারকারীর প্রত্যাশা ও প্রযুক্তিগত বাস্তবতার মধ্যে ভালো সংযোগ তৈরি করতে সাহায্য করে।">
+              <h3>Cross-disciplinary thinking</h3>
+              <p>
                 My background in design and development helps me bridge user
                 expectations with technical implementation realities.
               </p>
@@ -116,17 +109,14 @@
 
         <section class="focus-detail reveal">
           <div class="section-heading">
-            <p class="eyebrow" data-i18n-en="About xCloud" data-i18n-bn="এক্সক্লাউড সম্পর্কে">About xCloud</p>
-            <h2 data-i18n-en="The platform behind my current support work" data-i18n-bn="যে প্ল্যাটফর্মে আমি এখন সাপোর্টের কাজ করি">The platform behind my current support work</h2>
+            <p class="eyebrow">About xCloud</p>
+            <h2>The platform behind my current support work</h2>
           </div>
           <div class="cards focus-detail-grid">
             <article class="info-card">
               <p class="card-index">01</p>
-              <h3 data-i18n-en="Managed hosting and server control" data-i18n-bn="ম্যানেজড হোস্টিং ও সার্ভার কন্ট্রোল">Managed hosting and server control</h3>
-              <p
-                data-i18n-html-en='<a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a> is a managed hosting and server management platform built for WordPress, Laravel, PHP applications, Node.js projects, and Docker-based workloads from one dashboard.'
-                data-i18n-html-bn='<a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a> একটি ম্যানেজড হোস্টিং ও সার্ভার ম্যানেজমেন্ট প্ল্যাটফর্ম, যা একটি ড্যাশবোর্ড থেকেই WordPress, Laravel, PHP অ্যাপ্লিকেশন, Node.js প্রজেক্ট, এবং Docker-ভিত্তিক ওয়ার্কলোড পরিচালনার জন্য তৈরি।'
-              >
+              <h3>Managed hosting and server control</h3>
+              <p>
                 <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a> is a managed hosting and server management platform built
                 for WordPress, Laravel, PHP applications, Node.js projects, and
                 Docker-based workloads from one dashboard.
@@ -134,8 +124,8 @@
             </article>
             <article class="info-card">
               <p class="card-index">02</p>
-              <h3 data-i18n-en="Built for speed and operations" data-i18n-bn="গতি ও অপারেশনের জন্য তৈরি">Built for speed and operations</h3>
-              <p data-i18n-en="The platform focuses on practical deployment and operations workflows, including one-click app launches, backups, SSL, monitoring, team access, and support for multiple cloud providers." data-i18n-bn="এই প্ল্যাটফর্মটি বাস্তবধর্মী ডিপ্লয়মেন্ট ও অপারেশনস ওয়ার্কফ্লোতে গুরুত্ব দেয়, যার মধ্যে আছে one-click app launch, backup, SSL, monitoring, team access, এবং একাধিক cloud provider-এর সাপোর্ট।">
+              <h3>Built for speed and operations</h3>
+              <p>
                 The platform focuses on practical deployment and operations
                 workflows, including one-click app launches, backups, SSL,
                 monitoring, team access, and support for multiple cloud
@@ -144,11 +134,8 @@
             </article>
             <article class="info-card">
               <p class="card-index">03</p>
-              <h3 data-i18n-en="Why it matters in my role" data-i18n-bn="আমার কাজের ক্ষেত্রে এর গুরুত্ব">Why it matters in my role</h3>
-              <p
-                data-i18n-html-en='Working with <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a> means supporting customers across hosting, migrations, troubleshooting, usability, and product quality in a platform designed to simplify modern cloud workflows.'
-                data-i18n-html-bn='<a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a>-এ কাজ করা মানে এমন একটি প্ল্যাটফর্মে গ্রাহকদের হোস্টিং, মাইগ্রেশন, ট্রাবলশুটিং, ব্যবহারযোগ্যতা, এবং প্রোডাক্ট কোয়ালিটির বিষয়ে সহায়তা করা, যা আধুনিক cloud workflow-কে সহজ করার জন্য তৈরি।'
-              >
+              <h3>Why it matters in my role</h3>
+              <p>
                 Working with <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a> means supporting customers across hosting,
                 migrations, troubleshooting, usability, and product quality in
                 a platform designed to simplify modern cloud workflows.

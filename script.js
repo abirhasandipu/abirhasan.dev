@@ -1,5 +1,4 @@
 const storageKey = "theme-preference";
-const languageStorageKey = "language-preference";
 const root = document.documentElement;
 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const mobileNavQuery = window.matchMedia("(max-width: 680px)");
@@ -26,7 +25,7 @@ const ensureFontAwesome = () => {
 };
 
 const getSemanticText = (element) =>
-  (element?.dataset?.i18nEn || element?.textContent || "").trim().replace(/\s+/g, " ");
+  (element?.textContent || "").trim().replace(/\s+/g, " ");
 
 const iconMarkup = (classes) =>
   `<span class="fa-inline-icon" aria-hidden="true"><i class="${classes}"></i></span>`;
@@ -52,7 +51,6 @@ const decorateNav = () => {
     "about.html": "fa-solid fa-user",
     "focus.html": "fa-solid fa-compass-drafting",
     "interests.html": "fa-solid fa-heart",
-    "blog.html": "fa-solid fa-pen-nib",
     "contact.html": "fa-solid fa-envelope",
   };
 
@@ -73,11 +71,9 @@ const decorateButtons = () => {
     "Live Site": "fa-solid fa-arrow-up-right-from-square",
     "Case Study": "fa-regular fa-file-lines",
     GitHub: "fa-brands fa-github",
-    English: "fa-solid fa-language",
-    "বাংলা": "fa-solid fa-language",
   };
 
-  document.querySelectorAll(".button, .lang-toggle").forEach((button) => {
+  document.querySelectorAll(".button").forEach((button) => {
     const label = getSemanticText(button);
     applyIconLabel(button, buttonIcons[label] || null);
   });
@@ -155,7 +151,8 @@ const decorateCardHeadings = () => {
     "Best ways to connect": "fa-solid fa-address-card",
     "DhakaMRTTime.com": "fa-solid fa-train-subway",
     GoldPriceBD: "fa-solid fa-coins",
-    MessMate: "fa-solid fa-house-user",
+    GoodPrice: "fa-solid fa-tag",
+    ServerDiagnosis: "fa-solid fa-stethoscope",
   };
 
   document
@@ -174,55 +171,6 @@ const decorateInterface = () => {
   decorateLabels();
   decorateCardHeadings();
 };
-
-const getStoredLanguage = () => {
-  try {
-    return localStorage.getItem(languageStorageKey);
-  } catch {
-    return null;
-  }
-};
-
-const setStoredLanguage = (language) => {
-  try {
-    localStorage.setItem(languageStorageKey, language);
-  } catch {
-    return;
-  }
-};
-
-const getPreferredLanguage = () => {
-  const storedLanguage = getStoredLanguage();
-  if (storedLanguage === "en" || storedLanguage === "bn") {
-    return storedLanguage;
-  }
-
-  return root.lang === "bn" ? "bn" : "en";
-};
-
-const applyLanguage = (language) => {
-  const nextLanguage = language === "bn" ? "bn" : "en";
-  root.lang = nextLanguage;
-  root.dataset.language = nextLanguage;
-
-  document.querySelectorAll("[data-i18n-en]").forEach((element) => {
-    element.textContent = element.dataset[`i18n${nextLanguage === "bn" ? "Bn" : "En"}`];
-  });
-
-  document.querySelectorAll("[data-i18n-html-en]").forEach((element) => {
-    element.innerHTML = element.dataset[`i18nHtml${nextLanguage === "bn" ? "Bn" : "En"}`];
-  });
-
-  document.querySelectorAll("[data-i18n-content-en]").forEach((element) => {
-    element.setAttribute(
-      "content",
-      element.dataset[`i18nContent${nextLanguage === "bn" ? "Bn" : "En"}`]
-    );
-  });
-};
-
-const pageHasTranslations = () =>
-  document.querySelector("[data-i18n-en], [data-i18n-html-en], [data-i18n-content-en]") !== null;
 
 const getHeaderControls = () => {
   const header = document.querySelector(".site-header");
@@ -267,48 +215,6 @@ const setStoredTheme = (theme) => {
   } catch {
     return;
   }
-};
-
-const renderLanguageToggle = () => {
-  if (!pageHasTranslations()) {
-    return null;
-  }
-
-  const controls = getHeaderControls();
-  if (!controls) {
-    return null;
-  }
-
-  const button = document.createElement("button");
-  button.className = "lang-toggle";
-  button.type = "button";
-  button.setAttribute("aria-live", "polite");
-
-  const syncLabel = () => {
-    const language = root.lang === "bn" ? "bn" : "en";
-    const nextLanguage = language === "bn" ? "en" : "bn";
-    button.textContent = language === "bn" ? "English" : "বাংলা";
-    button.setAttribute(
-      "aria-label",
-      nextLanguage === "bn" ? "Switch language to Bangla" : "Switch language to English"
-    );
-    button.setAttribute(
-      "title",
-      nextLanguage === "bn" ? "Switch language to Bangla" : "Switch language to English"
-    );
-  };
-
-  button.addEventListener("click", () => {
-    const nextLanguage = root.lang === "bn" ? "en" : "bn";
-    applyLanguage(nextLanguage);
-    setStoredLanguage(nextLanguage);
-    syncLabel();
-    decorateInterface();
-  });
-
-  controls.append(button);
-  syncLabel();
-  return button;
 };
 
 const renderNavToggle = () => {
@@ -373,8 +279,6 @@ const syncMobileNav = () => {
 };
 
 applyTheme(getPreferredTheme());
-applyLanguage(getPreferredLanguage());
-renderLanguageToggle();
 renderNavToggle();
 syncMobileNav();
 decorateInterface();
