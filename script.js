@@ -1,15 +1,8 @@
 const storageKey = "theme-preference";
-const languageStorageKey = "language-preference";
 const root = document.documentElement;
 const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-const mobileNavQuery = window.matchMedia("(max-width: 680px)");
 const fontAwesomeHref =
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css";
-const menuIcon = `
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M4 7h16M4 12h16M4 17h16"></path>
-  </svg>
-`;
 
 const ensureFontAwesome = () => {
   if (document.querySelector('link[data-fontawesome="true"]')) {
@@ -26,7 +19,7 @@ const ensureFontAwesome = () => {
 };
 
 const getSemanticText = (element) =>
-  (element?.dataset?.i18nEn || element?.textContent || "").trim().replace(/\s+/g, " ");
+  (element?.textContent || "").trim().replace(/\s+/g, " ");
 
 const iconMarkup = (classes) =>
   `<span class="fa-inline-icon" aria-hidden="true"><i class="${classes}"></i></span>`;
@@ -52,7 +45,6 @@ const decorateNav = () => {
     "about.html": "fa-solid fa-user",
     "focus.html": "fa-solid fa-compass-drafting",
     "interests.html": "fa-solid fa-heart",
-    "blog.html": "fa-solid fa-pen-nib",
     "contact.html": "fa-solid fa-envelope",
   };
 
@@ -73,11 +65,9 @@ const decorateButtons = () => {
     "Live Site": "fa-solid fa-arrow-up-right-from-square",
     "Case Study": "fa-regular fa-file-lines",
     GitHub: "fa-brands fa-github",
-    English: "fa-solid fa-language",
-    "বাংলা": "fa-solid fa-language",
   };
 
-  document.querySelectorAll(".button, .lang-toggle").forEach((button) => {
+  document.querySelectorAll(".button").forEach((button) => {
     const label = getSemanticText(button);
     applyIconLabel(button, buttonIcons[label] || null);
   });
@@ -175,71 +165,6 @@ const decorateInterface = () => {
   decorateCardHeadings();
 };
 
-const getStoredLanguage = () => {
-  try {
-    return localStorage.getItem(languageStorageKey);
-  } catch {
-    return null;
-  }
-};
-
-const setStoredLanguage = (language) => {
-  try {
-    localStorage.setItem(languageStorageKey, language);
-  } catch {
-    return;
-  }
-};
-
-const getPreferredLanguage = () => {
-  const storedLanguage = getStoredLanguage();
-  if (storedLanguage === "en" || storedLanguage === "bn") {
-    return storedLanguage;
-  }
-
-  return root.lang === "bn" ? "bn" : "en";
-};
-
-const applyLanguage = (language) => {
-  const nextLanguage = language === "bn" ? "bn" : "en";
-  root.lang = nextLanguage;
-  root.dataset.language = nextLanguage;
-
-  document.querySelectorAll("[data-i18n-en]").forEach((element) => {
-    element.textContent = element.dataset[`i18n${nextLanguage === "bn" ? "Bn" : "En"}`];
-  });
-
-  document.querySelectorAll("[data-i18n-html-en]").forEach((element) => {
-    element.innerHTML = element.dataset[`i18nHtml${nextLanguage === "bn" ? "Bn" : "En"}`];
-  });
-
-  document.querySelectorAll("[data-i18n-content-en]").forEach((element) => {
-    element.setAttribute(
-      "content",
-      element.dataset[`i18nContent${nextLanguage === "bn" ? "Bn" : "En"}`]
-    );
-  });
-};
-
-const pageHasTranslations = () =>
-  document.querySelector("[data-i18n-en], [data-i18n-html-en], [data-i18n-content-en]") !== null;
-
-const getHeaderControls = () => {
-  const header = document.querySelector(".site-header");
-  if (!header) {
-    return null;
-  }
-
-  let controls = header.querySelector(".header-controls");
-  if (!controls) {
-    controls = document.createElement("div");
-    controls.className = "header-controls";
-    header.append(controls);
-  }
-
-  return controls;
-};
-
 const getStoredTheme = () => {
   try {
     return localStorage.getItem(storageKey);
@@ -269,114 +194,7 @@ const setStoredTheme = (theme) => {
   }
 };
 
-const renderLanguageToggle = () => {
-  if (!pageHasTranslations()) {
-    return null;
-  }
-
-  const controls = getHeaderControls();
-  if (!controls) {
-    return null;
-  }
-
-  const button = document.createElement("button");
-  button.className = "lang-toggle";
-  button.type = "button";
-  button.setAttribute("aria-live", "polite");
-
-  const syncLabel = () => {
-    const language = root.lang === "bn" ? "bn" : "en";
-    const nextLanguage = language === "bn" ? "en" : "bn";
-    button.textContent = language === "bn" ? "English" : "বাংলা";
-    button.setAttribute(
-      "aria-label",
-      nextLanguage === "bn" ? "Switch language to Bangla" : "Switch language to English"
-    );
-    button.setAttribute(
-      "title",
-      nextLanguage === "bn" ? "Switch language to Bangla" : "Switch language to English"
-    );
-  };
-
-  button.addEventListener("click", () => {
-    const nextLanguage = root.lang === "bn" ? "en" : "bn";
-    applyLanguage(nextLanguage);
-    setStoredLanguage(nextLanguage);
-    syncLabel();
-    decorateInterface();
-  });
-
-  controls.append(button);
-  syncLabel();
-  return button;
-};
-
-const renderNavToggle = () => {
-  const header = document.querySelector(".site-header");
-  const controls = getHeaderControls();
-  const nav = document.querySelector(".nav");
-  if (!header || !nav || !controls) {
-    return null;
-  }
-
-  const button = document.createElement("button");
-  button.className = "nav-toggle";
-  button.type = "button";
-  button.innerHTML = menuIcon;
-  button.setAttribute("aria-label", "Toggle navigation menu");
-  button.setAttribute("title", "Toggle navigation menu");
-  button.setAttribute("aria-expanded", "false");
-
-  const syncMenuState = () => {
-    const expanded = header.classList.contains("is-menu-open");
-    button.setAttribute("aria-expanded", expanded ? "true" : "false");
-  };
-
-  button.addEventListener("click", () => {
-    header.classList.toggle("is-menu-open");
-    syncMenuState();
-  });
-
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (!mobileNavQuery.matches) {
-        return;
-      }
-
-      header.classList.remove("is-menu-open");
-      syncMenuState();
-    });
-  });
-
-  controls.append(button);
-  syncMenuState();
-  return button;
-};
-
-const syncMobileNav = () => {
-  const header = document.querySelector(".site-header");
-  const navToggle = document.querySelector(".nav-toggle");
-  if (!header || !navToggle) {
-    return;
-  }
-
-  const shouldCompact = mobileNavQuery.matches && window.scrollY > 60;
-  header.classList.toggle("is-compact", shouldCompact);
-
-  if (!shouldCompact) {
-    header.classList.remove("is-menu-open");
-  }
-
-  navToggle.hidden = !shouldCompact;
-  navToggle.setAttribute("aria-hidden", shouldCompact ? "false" : "true");
-  navToggle.setAttribute("aria-expanded", header.classList.contains("is-menu-open") ? "true" : "false");
-};
-
 applyTheme(getPreferredTheme());
-applyLanguage(getPreferredLanguage());
-renderLanguageToggle();
-renderNavToggle();
-syncMobileNav();
 decorateInterface();
 
 mediaQuery.addEventListener("change", (event) => {
@@ -386,12 +204,6 @@ mediaQuery.addEventListener("change", (event) => {
 
   applyTheme(event.matches ? "dark" : "light");
 });
-
-mobileNavQuery.addEventListener("change", () => {
-  syncMobileNav();
-});
-
-window.addEventListener("scroll", syncMobileNav, { passive: true });
 
 const observer = new IntersectionObserver(
   (entries) => {
