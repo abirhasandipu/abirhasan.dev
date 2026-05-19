@@ -112,6 +112,7 @@ const decorateLabels = () => {
     "Project 01": "fa-solid fa-train-subway",
     "Project 02": "fa-solid fa-coins",
     "Project 03": "fa-solid fa-house-user",
+    "Project 04": "fa-solid fa-puzzle-piece",
     "Blog Post 01": "fa-solid fa-file-signature",
     "Blog Post 02": "fa-solid fa-file-signature",
     "Blog Post 03": "fa-solid fa-file-signature",
@@ -151,8 +152,9 @@ const decorateCardHeadings = () => {
     "Best ways to connect": "fa-solid fa-address-card",
     "DhakaMRTTime.com": "fa-solid fa-train-subway",
     GoldPriceBD: "fa-solid fa-coins",
-    GoodPrice: "fa-solid fa-tag",
+    GoldPrice: "fa-solid fa-tag",
     ServerDiagnosis: "fa-solid fa-stethoscope",
+    "ServerDiagnosis Extensions": "fa-solid fa-puzzle-piece",
   };
 
   document
