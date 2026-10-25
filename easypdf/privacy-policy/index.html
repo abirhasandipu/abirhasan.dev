@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EasyPDF Privacy Policy</title>
+    <meta name="description" content="How the current Android version of EasyPDF handles documents, file access, local storage, permissions, and privacy. Effective October 25, 2026." />
+    <link rel="canonical" href="https://abirhasan.dev/easypdf/privacy-policy" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <style>
+      .policy-shell { width: min(920px, calc(100% - 32px)); margin: auto; padding: 32px 0 64px; position: relative; }
+      .policy-home { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 32px; color: var(--muted); font-size: .85rem; }
+      .policy-home::before { content: "\2190"; font-size: 1.2rem; }
+      .policy-document { padding: clamp(24px, 6vw, 72px); border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); }
+      .policy-kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; font-size: .75rem; text-transform: uppercase; letter-spacing: .15em; color: var(--accent); }
+      .policy-kicker svg { width: 30px; height: 30px; padding: 5px; border: 1px solid var(--line); border-radius: 7px; }
+      .policy-document h1 { max-width: none; font-family: Georgia, serif; font-weight: 400; font-size: clamp(2rem, 6vw, 3.7rem); line-height: 1.13; letter-spacing: -.035em; overflow-wrap: anywhere; }
+      .policy-document h2 { max-width: none; font-size: 1.2rem; line-height: 1.4; margin: 40px 0 14px; padding-top: 28px; border-top: 1px solid var(--line); letter-spacing: -.02em; scroll-margin-top: 24px; }
+      .policy-document p { color: #c2c9bf; font-size: 1rem; line-height: 1.85; margin: 12px 0; }
+      .policy-document .policy-date { display: inline-block; color: var(--muted); font-size: .8rem; margin: 22px 0 24px; padding: 7px 12px; background: var(--bg-accent); border-radius: 6px; }
+      .policy-contents { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+      .policy-contents a { padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-size: .8rem; color: var(--text); text-decoration: none !important; }
+      .policy-contents a:hover { background: var(--bg-accent); }
+      .policy-footer { margin: 24px 0 0; text-align: center; font-size: .8rem; color: var(--muted); }
+      .policy-document a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+      .policy-shell a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+      @media (max-width: 480px) { .policy-shell { padding-top: 20px; } .policy-document { border-radius: 12px; } .policy-document p { font-size: .95rem; } }
+    </style>
+  </head>
+  <body>
+    <main class="policy-shell">
+      <a class="policy-home" href="../../index.html">Back to abirhasan.dev</a>
+      <article class="policy-document" aria-labelledby="policy-title">
+        <div class="policy-kicker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6" /></svg>EasyPDF / Privacy</div>
+        <h1 id="policy-title">Privacy Policy — EasyPDF</h1>
+        <p class="policy-date">Effective date: <time datetime="2026-10-25">October 25, 2026</time></p>
+        <p>EasyPDF is a document reader for Android. This policy explains how the current version handles your information.</p>
+        <nav class="policy-contents" aria-label="Policy sections">
+          <a href="#documents">Documents</a><a href="#collection">Collection</a><a href="#advertising">Advertising</a><a href="#sharing">Sharing</a><a href="#storage">Storage</a><a href="#permissions">Permissions</a><a href="#changes">Changes</a><a href="#contact">Contact</a>
+        </nav>
+
+        <h2 id="documents">Documents and file access</h2>
+        <p>EasyPDF accesses files you choose using Android’s file picker or explicitly open or share with the app. Documents are processed locally on your device for viewing. EasyPDF does not upload your documents to the developer.</p>
+
+        <h2 id="collection">Information collection</h2>
+        <p>The current version has no accounts, advertising SDKs, analytics SDKs, or tracking SDKs. The developer does not collect or upload your documents, personal information, or device identifiers.</p>
+
+        <h2 id="advertising">Advertising</h2>
+        <p>The current version does not serve advertisements. A reserved banner area may appear in the interface, but it does not load ads or collect advertising data. If advertising is introduced, this policy will be updated to explain the advertising provider and its data practices.</p>
+
+        <h2 id="sharing">Sharing and external applications</h2>
+        <p>When you choose to share a document or open it in another application, Android passes the selected document to the application you choose. That application’s privacy policy applies to its handling of the document.</p>
+
+        <h2 id="storage">Local storage and retention</h2>
+        <p>Reading preferences are stored on your device. Temporary document copies may be stored in EasyPDF’s private cache and are deleted when the document is closed normally. Cached files left after an interruption can be removed using Android’s Clear cache option.</p>
+        <p>Clear storage or uninstall EasyPDF to remove its local preferences and cached files. Your original documents are not deleted by these actions.</p>
+
+        <h2 id="permissions">Permissions</h2>
+        <p>The current version does not request broad storage access or internet access. Android may retain access grants for documents you select until you revoke them, clear app storage, or uninstall the app.</p>
+
+        <h2 id="changes">Changes</h2>
+        <p>This policy may be updated when EasyPDF’s features or data practices change. The effective date above will reflect updates.</p>
+
+        <h2 id="contact">Contact</h2>
+        <p>For privacy questions or support, contact:<br /><a href="mailto:abirhasandipu.dev@gmail.com">abirhasandipu.dev@gmail.com</a></p>
+      </article>
+      <p class="policy-footer">EasyPDF · Android document reader</p>
+    </main>
+  </body>
+</html>
