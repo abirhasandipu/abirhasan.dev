@@ -12,6 +12,13 @@ cvTrigger.addEventListener("click", () => {
 cvForm.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!cvForm.reportValidity()) return;
+  const documentFrame = document.getElementById("cv-document");
+  if (!documentFrame.hasAttribute("src")) {
+    documentFrame.src = documentFrame.dataset.src;
+  }
+  document.querySelectorAll("[data-cv-download]").forEach((link) => {
+    link.href = link.dataset.cvDownload;
+  });
   cvViewer.hidden = false;
   cvForm.hidden = true;
   cvTrigger.hidden = true;

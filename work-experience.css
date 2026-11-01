@@ -22,5 +22,5 @@
 #cv-viewer { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 24px; }
 .cv-viewer-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
 .cv-viewer-header h2 { font-size: 1.4rem; }
-.cv-sheet { width: min(100%, 680px); aspect-ratio: 210 / 297; margin: 24px auto 0; background: #fff; border: 1px solid #ddd; border-radius: 3px; box-shadow: var(--shadow); }
+.cv-document { display: block; width: 100%; height: clamp(420px, 75vh, 960px); margin-top: 24px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); }
 .experience-history a { text-decoration: underline; text-underline-offset: 3px; }

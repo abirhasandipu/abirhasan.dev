@@ -50,8 +50,12 @@
                 <h2 id="cv-title" tabindex="-1">Abir Hasan / CV</h2>
                 <button class="button secondary" id="cv-close" type="button">Close CV</button>
               </div>
-              <p class="cv-notice">The CV will be added here soon.</p>
-              <div class="cv-sheet" aria-label="Empty CV placeholder"></div>
+              <div class="project-actions">
+                <a class="button primary" data-cv-download="./assets/cv/abir-hasan-cv.pdf" download>Download PDF</a>
+                <a class="button secondary" data-cv-download="./assets/cv/abir-hasan-cv.docx" download>Download Word document</a>
+              </div>
+              <p class="cv-notice">If the preview is unavailable in your browser, download the PDF to read it.</p>
+              <iframe id="cv-document" class="cv-document" title="CV of Md Abir Hasan Dipu" data-src="./assets/cv/abir-hasan-cv.pdf"></iframe>
             </div>
             <noscript><p>Enable JavaScript to open the CV preview.</p></noscript>
           </div>
