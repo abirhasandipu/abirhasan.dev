@@ -127,6 +127,11 @@ h3 { font-size:1.23rem; line-height:1.3; letter-spacing:-.03em; }
 }
 .with-icon { display:inline-flex; align-items:center; gap:8px; }
 .fa-inline-icon { display:none; }
+.site-footer { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px 28px; margin-top:56px; padding:24px 0 0; border-top:1px solid var(--line); color:var(--muted); font-size:.78rem; }
+.site-footer p { margin:0; }
+.site-footer nav { display:flex; flex-wrap:wrap; gap:8px 22px; }
+.site-footer a { display:inline-block; padding:8px 0; }
+.site-footer a:hover { color:var(--accent-dark); }
 @media (max-width:1000px) { .site-header { flex-wrap:wrap; gap:12px; margin-bottom:40px; } .nav { gap:8px 14px; } }
 @media (max-width:760px) {
   .hero,.about-hero,.contact-grid,.about-grid { grid-template-columns:1fr; gap:28px; }

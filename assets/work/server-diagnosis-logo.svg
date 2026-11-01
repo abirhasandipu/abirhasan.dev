@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Server Diagnosis</title>
+  <g stroke="#2ddd43" stroke-width="7" stroke-linejoin="round">
+    <rect x="18" y="24" width="64" height="28" rx="6"/>
+    <rect x="18" y="65" width="64" height="28" rx="6"/>
+  </g>
+  <path d="m92 85 19 19" stroke="#2ddd43" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="77" cy="68" r="25" stroke="#2ddd43" stroke-width="7"/>
+</svg>
