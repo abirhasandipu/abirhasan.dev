@@ -283,7 +283,7 @@ const syncMobileNav = () => {
 applyTheme(getPreferredTheme());
 renderNavToggle();
 syncMobileNav();
-decorateInterface();
+// Text labels keep the interface lightweight without an external icon font.
 
 mediaQuery.addEventListener("change", (event) => {
   if (getStoredTheme()) {

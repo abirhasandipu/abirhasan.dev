@@ -3,21 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abir | GoldPriceBD</title>
+    <title>Abir | GoldPrice Checker</title>
     <meta
       name="description"
-      content="Project page for GoldPriceBD, a concept for presenting gold price information more clearly."
+      content="Project page for GoldPrice Checker, a concept for presenting gold price information more clearly."
     />
-    <script>
-      document.documentElement.classList.add("js");
-      try {
-        const savedTheme = localStorage.getItem("theme-preference");
-        const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        document.documentElement.dataset.theme = theme;
-      } catch {
-        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,13 +19,13 @@
   <body>
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href="./index.html">abirhasan.dev</a>
+        <a class="brand" href="./index.html">Abir Hasan</a>
         <nav class="nav">
           <a href="./index.html">Home</a>
           <a href="./my-work.html">My Work</a>
-          <a href="./about.html">About</a>
-          <a href="./focus.html">Career Focus</a>
-          <a href="./interests.html">Interests</a>
+          <a href="./articles.html">Articles</a>
+          <a href="./research.html">Research</a>
+          <a href="./work-experience.html">Experience</a>
           <a href="./contact.html">Contact</a>
         </nav>
       </header>
@@ -44,10 +34,10 @@
         <section class="project-detail-hero reveal">
           <div class="section-heading">
             <p class="eyebrow">Project Detail</p>
-            <h1>GoldPriceBD</h1>
+            <h1>GoldPrice Checker</h1>
           </div>
           <p class="hero-text">
-            A portfolio concept focused on presenting gold price information in
+            A web app focused on presenting gold price information in
             a cleaner, easier-to-read format for everyday users.
           </p>
           <div class="blog-tags" aria-label="Tech stack">
@@ -57,9 +47,8 @@
             <span class="blog-tag">Responsive Web</span>
           </div>
           <div class="project-actions">
-            <a class="button primary" href="https://goldprice.abirhasan.dev/" target="_blank" rel="noreferrer">Live Site</a>
+            <a class="button primary" href="https://uptodategoldprice.com/" target="_blank" rel="noreferrer">Live Site</a>
             <a class="button secondary" href="./my-work.html">Back to My Work</a>
-            <a class="button secondary" href="#">GitHub</a>
           </div>
         </section>
 
@@ -74,8 +63,8 @@
             </div>
             <img
               class="project-real-media portrait-media"
-              src="./assets/work/gold-price-bd.svg"
-              alt="GoldPriceBD placeholder screen"
+              src="./assets/work/uptodate-goldprice-preview.png"
+              alt="GoldPrice Checker dashboard with gold rates and price history"
             />
             <div class="placeholder-frame placeholder-portrait">
               <span class="placeholder-label">Screenshot 02</span>
@@ -86,9 +75,9 @@
         <section class="project-detail-section reveal">
           <div class="project-copy">
             <p>
-              GoldPriceBD explores how financial information can feel more
+              GoldPrice Checker explores how financial information can feel more
               understandable through strong hierarchy, clean typography, and a
-              quieter visual system. The concept is aimed at clarity rather
+              quieter visual system. The interface is aimed at clarity rather
               than data overload.
             </p>
             <p>

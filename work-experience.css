@@ -1,0 +1,26 @@
+.experience-intro,
+.experience-history {
+  padding: clamp(24px, 5vw, 48px);
+}
+
+.experience-intro h1,
+.experience-history h2 {
+  max-width: none;
+  overflow-wrap: anywhere;
+}
+
+.cv-access { margin-top: 28px; }
+.cv-access button { cursor: pointer; font: inherit; }
+.cv-access [hidden] { display: none; }
+#cv-form { margin-top: 24px; max-width: 640px; }
+#cv-form label { display: block; font-weight: 700; }
+#cv-help,
+.cv-notice { color: var(--muted); font-size: .9rem; line-height: 1.7; }
+.cv-form-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+#cv-email { flex: 1 1 220px; min-width: 0; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface-strong); color: var(--text); font: inherit; }
+.cv-access :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+#cv-viewer { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 24px; }
+.cv-viewer-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.cv-viewer-header h2 { font-size: 1.4rem; }
+.cv-sheet { width: min(100%, 680px); aspect-ratio: 210 / 297; margin: 24px auto 0; background: #fff; border: 1px solid #ddd; border-radius: 3px; box-shadow: var(--shadow); }
+.experience-history a { text-decoration: underline; text-underline-offset: 3px; }

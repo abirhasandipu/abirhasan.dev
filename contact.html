@@ -8,16 +8,6 @@
       name="description"
       content="Contact Abir Hasan for technical support, collaboration, and professional opportunities."
     />
-    <script>
-      document.documentElement.classList.add("js");
-      try {
-        const savedTheme = localStorage.getItem("theme-preference");
-        const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        document.documentElement.dataset.theme = theme;
-      } catch {
-        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,13 +19,13 @@
   <body>
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href="./index.html">abirhasan.dev</a>
+        <a class="brand" href="./index.html">Abir Hasan</a>
         <nav class="nav">
           <a href="./index.html">Home</a>
           <a href="./my-work.html">My Work</a>
-          <a href="./about.html">About</a>
-          <a href="./focus.html">Career Focus</a>
-          <a href="./interests.html">Interests</a>
+          <a href="./articles.html">Articles</a>
+          <a href="./research.html">Research</a>
+          <a href="./work-experience.html">Experience</a>
           <a href="./contact.html">Contact</a>
         </nav>
       </header>

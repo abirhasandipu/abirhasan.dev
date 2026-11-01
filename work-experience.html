@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abir | Work Experience</title>
+    <meta name="description" content="Abir Hasan's experience in technical support, software development, and graphic design. View his CV and career history." />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./work-experience.css" />
+    <script src="./work-experience.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html">Abir Hasan</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="./index.html">Home</a>
+          <a href="./my-work.html">My Work</a>
+          <a href="./articles.html">Articles</a>
+          <a href="./research.html">Research</a>
+          <a href="./work-experience.html" aria-current="page">Experience</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </header>
+      <main>
+        <section class="experience-intro" aria-labelledby="experience-title">
+          <p class="eyebrow">Career / Curriculum vitae</p>
+          <h1 id="experience-title">Work Experience</h1>
+          <p class="hero-text">From visual communication to technical problem solving. A look at the roles that have shaped how I work.</p>
+          <div class="cv-access">
+            <button class="button primary" id="cv-trigger" type="button" aria-expanded="false" aria-controls="cv-form">View CV</button>
+            <form id="cv-form" hidden>
+              <label for="cv-email">Your email address</label>
+              <p id="cv-help">Enter a valid email address to view the CV. Your address is not saved or sent anywhere.</p>
+              <div class="cv-form-row">
+                <input id="cv-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="cv-help" required />
+                <button class="button secondary" type="submit">Continue to CV</button>
+              </div>
+            </form>
+            <div id="cv-viewer" hidden role="region" aria-labelledby="cv-title">
+              <div class="cv-viewer-header">
+                <h2 id="cv-title" tabindex="-1">Abir Hasan / CV</h2>
+                <button class="button secondary" id="cv-close" type="button">Close CV</button>
+              </div>
+              <p class="cv-notice">The CV will be added here soon.</p>
+              <div class="cv-sheet" aria-label="Empty CV placeholder"></div>
+            </div>
+            <noscript><p>Enable JavaScript to open the CV preview.</p></noscript>
+          </div>
+        </section>
+        <section class="experience-history" aria-labelledby="history-title">
+          <p class="eyebrow">Experience</p>
+          <h2 id="history-title">A path across disciplines.</h2>
+          <div class="timeline-list">
+            <article class="timeline-item">
+              <p class="card-index">2022 - 2026 (~5 years) / <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a></p>
+              <h3>Technical Support Engineering</h3>
+              <p>Worked as a Senior Technical Support Engineer on <a href="https://xcloud.host/" target="_blank" rel="noreferrer">xCloud</a>, contributing across technical support, operations, and product quality. My work covered application and server troubleshooting, DevOps, migrations, feature testing, QA, usability feedback, and documentation.</p>
+            </article>
+            <article class="timeline-item">
+              <p class="card-index">2020 (6 months) / <a href="https://softifybd.com/" target="_blank" rel="noreferrer">SoftifyBD</a></p>
+              <h3>Junior Software Developer Intern</h3>
+              <p>Expanded my technical skills through hands-on software development and gained a stronger understanding of how software is built.</p>
+            </article>
+            <article class="timeline-item">
+              <p class="card-index">2013 - 2015 (~2 years) / Melonades</p>
+              <h3>Graphic Designer</h3>
+              <p>Built a foundation in visual communication, presentation, and solving problems with the user in mind.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
