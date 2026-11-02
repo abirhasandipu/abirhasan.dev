@@ -1,4 +1,12 @@
 (() => {
+  window.$crisp = window.$crisp || [];
+  document.querySelectorAll("[data-open-crisp]").forEach((button) => {
+    button.addEventListener("click", () => {
+      window.$crisp.push(["do", "chat:show"]);
+      window.$crisp.push(["do", "chat:open"]);
+    });
+  });
+
   if (document.querySelector('script[src="https://client.crisp.chat/l.js"]')) {
     return;
   }
